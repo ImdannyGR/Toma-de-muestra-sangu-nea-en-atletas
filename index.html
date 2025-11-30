@@ -44,14 +44,14 @@
   <!-- Sección procedimiento -->
   <section class="procedimiento">
     <h2 class="proc-titulo">Procedimiento</h2>
-    <h3 class="proc-subtitulo">¡Fotografías!</h3>
+    <h3 class="proc-subtitulo">¡Fotografías y video!</h3>
 
     <div class="galeria">
       <div class="foto" style="--color-borde: #f6c000;">
        <img src="foto1.jpg" alt="Laboratorio" class="foto1" onclick="openModal('modal1')">
       </div>
       <div class="foto" style="--color-borde: #ff4b5c;">
-        <img src="foto2.jpg" alt="Muestras de sangre" class="foto2" onclick="openModal('modal2')">
+        <video class="foto2" src="videoMuestra.mp4" autoplay muted loop playsinline preload="metadata" onclick="openModal('modal2')"></video>
       </div>
       <div class="foto" style="--color-borde: #8b2eff;">
        <img src="foto3.jpg" alt="Laboratorio grupo" class="foto3" onclick="openModal('modal3')">
@@ -61,7 +61,7 @@
     
 
     <div class="diagrama">
-  <img src="diagrama.png" alt="Diagrama de flujo" class="img-diagrama">
+    <img src="diagrama.png" alt="Diagrama de flujo" class="img-diagrama" onclick="openModal('modal4')" style="cursor:pointer;">
     </div>
   </section>
 
@@ -126,10 +126,23 @@
     </div>
 
     <div class="contacto-der">
-        <h3 class="contacto-sub">Autoras</h3>
-        <p>Ana Paola Velázquez Del Pilar — QF48611@uvp.edu.mx</p>
-        <p>Jade Marian López Guzmán — QF48202@uvp.edu.mx</p>
-        <p>Atziry Crystel Carreón Linares — QF48874@uvp.edu.mx</p>
+        <h3 class="contacto-sub">Autores</h3>
+        <p class="autor">
+          <span class="autor-name">Ana Paola Velázquez Del Pilar</span>
+          <span class="autor-email">QF48611@uvp.edu.mx</span>
+        </p>
+        <p class="autor">
+          <span class="autor-name">Jade Marian López Guzmán</span>
+          <span class="autor-email">QF48202@uvp.edu.mx</span>
+        </p>
+        <p class="autor">
+          <span class="autor-name">Atziry Crystel Carreón Linares</span>
+          <span class="autor-email">QF48874@uvp.edu.mx</span>
+        </p>
+        <p class="autor">
+          <span class="autor-name">Samuel Sánchez Marcial</span>
+          <span class="autor-email">QF48753@uvp.edu.mx</span>
+        </p>
 
         <img src="logo.png" alt="Logo UVP" class="contacto-logo">
     </div>
@@ -145,7 +158,10 @@
 
 <div class="modal" id="modal2">
   <span class="close" onclick="closeModal('modal2')">&times;</span>
-  <img src="foto2.jpg" alt="Muestras de sangre" class="modal-img">
+  <video id="video-modal2" class="modal-video" controls preload="metadata">
+    <source src="videoMuestra.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+  </video>
 </div>
 
 <div class="modal" id="modal3">
@@ -155,20 +171,46 @@
 
 <div class="modal" id="modal4">
   <span class="close" onclick="closeModal('modal4')">&times;</span>
-  <img src="foto4.jpg" alt="Diagrama" class="modal-img">
+  <img src="diagrama.png" alt="Diagrama" class="modal-img">
 </div>
 
 
 <script>
   function openModal(id) {
-    document.getElementById(id).style.display = "flex";
+    const modal = document.getElementById(id);
+    modal.style.display = "flex";
+    const video = modal.querySelector('video');
+    if (video) {
+      try {
+        video.currentTime = 0;
+        // play after a user gesture (opening modal via click) — catch errors silently
+        video.play().catch(() => {});
+      } catch (e) {}
+    }
   }
 
   function closeModal(id) {
-    document.getElementById(id).style.display = "none";
+    const modal = document.getElementById(id);
+    modal.style.display = "none";
+    const video = modal.querySelector('video');
+    if (video) {
+      try {
+        video.pause();
+        video.currentTime = 0;
+      } catch (e) {}
+    }
   }
 </script>
 
+  <!-- Footer: aviso de copyright -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 Universidad del Valle de Puebla. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+
 
 </body>
+</html>
 </html>

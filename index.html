@@ -61,12 +61,44 @@
       </div>
     </div>
 
-    
-
     <div class="diagrama">
-    <img src="Diagrama en blanco.jpeg " alt="Diagrama de flujo" class="img-diagrama" onclick="openModal('modal4')" style="cursor:pointer;">
+     <img src="Diagrama en blanco.jpeg " alt="Diagrama de flujo" class="img-diagrama" onclick="openModal('modal4')" style="cursor:pointer;">
     </div>
+
+
+
+    <h2 class="proc-titulo">Kit utilizado y longitud que se aplicó</h2>
+
+  <div class="kig-contenedor">
+
+    <!-- BLOQUE 1 -->
+    <div class="kig-card">
+      <img src="kit1.jpg" alt="Kit 1" class="kig-img" onclick="openModal('modalKit1')">
+      <h3 class="proc-subtitulo">(Kit ferrozine)</h3>
+    </div>
+
+    <!-- BLOQUE 2 -->
+    <div class="kig-card">
+      <img src="kit2.jpg" alt="Kit 2" class="kig-img" onclick="openModal('modalKit2')">
+      <h3 class="proc-subtitulo">(Kit ferrozine)</h3>
+    </div>
+
+    <!-- TEXTO LATERAL -->
+    <div class="proc-info">
+      <div class="proc-subtitulo">Longitud aplicada:</div>
+      <div class="proc-subtitulo">• 562 nm</div>
+    </div>
+
+  </div>
+
   </section>
+
+ 
+
+  
+
+
+
 
   <!-- Sección Objetivos (nueva debajo del diagrama) -->
 <section class="objetivos-seccion">
@@ -186,6 +218,17 @@
     Tu navegador no soporta el elemento de video.
   </video>
 </div>
+
+<div class="modal" id="modalKit1">
+  <span class="close" onclick="closeModal('modalKit1')">&times;</span>
+  <img src="kit1.jpg" class="modal-img">
+</div>
+
+<div class="modal" id="modalKit2">
+  <span class="close" onclick="closeModal('modalKit2')">&times;</span>
+  <img src="kit2.jpg" class="modal-img">
+</div>
+
 
 
 <script>

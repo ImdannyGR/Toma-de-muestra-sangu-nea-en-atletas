@@ -51,10 +51,13 @@
        <img src="foto1.jpg" alt="Laboratorio" class="foto1" onclick="openModal('modal1')">
       </div>
       <div class="foto" style="--color-borde: #ff4b5c;">
-        <video class="foto2" src="videoMuestra.mp4" autoplay muted loop playsinline preload="metadata" onclick="openModal('modal2')"></video>
+        <video class="video" src="videoMuestra.mp4" autoplay muted loop playsinline preload="metadata" onclick="openModal('modal2')"></video>
       </div>
       <div class="foto" style="--color-borde: #8b2eff;">
        <img src="foto3.jpg" alt="Laboratorio grupo" class="foto3" onclick="openModal('modal3')">
+      </div>
+      <div class="foto" style="--color-borde: #cc4bff;">
+        <video class="video2" src="videoMuestra2.mp4" autoplay muted loop playsinline preload="metadata" onclick="openModal('modal5')"></video>
       </div>
     </div>
 
@@ -169,9 +172,19 @@
   <img src="foto3.jpg" alt="Laboratorio grupo" class="modal-img">
 </div>
 
+
+
 <div class="modal" id="modal4">
   <span class="close" onclick="closeModal('modal4')">&times;</span>
   <img src="Diagrama en blanco.jpeg" alt="Diagrama" class="modal-img">
+</div>
+
+<div class="modal" id="modal5">
+  <span class="close" onclick="closeModal('modal5')">&times;</span>
+  <video id="video-modal5" class="modal-video" controls preload="metadata">
+    <source src="videoMuestra2.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+  </video>
 </div>
 
 
